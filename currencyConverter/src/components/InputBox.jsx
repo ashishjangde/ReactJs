@@ -1,5 +1,6 @@
 /* eslint-disable */
 import PropTypes from 'prop-types';
+import { useId } from 'react';
 
 function InputBox({
   label,
@@ -12,13 +13,16 @@ function InputBox({
   currencyDisable = false,
   className = ""
 }) {
+
+  const Id = useId();
   return (
     <div className={`bg-gray-700 p-4 rounded-lg text-sm flex ${className}`}>
       <div className="w-1/2 pr-2">
-        <label className="text-gray-400 mb-2 inline-block">
+        <label htmlFor={Id} className="text-gray-400 mb-2 inline-block">
           {label}
         </label>
         <input
+          id={Id}
           className="outline-none w-full bg-transparent py-1.5 text-gray-200 border-b border-gray-600 focus:border-blue-500"
           type="number"
           placeholder="Amount"
@@ -42,7 +46,9 @@ function InputBox({
               {currency}
             </option>
           ))}
-        </select>
+          {/* everytime when you use loop use kwy attribute */}
+
+          </select>
       </div>
     </div>
   );
