@@ -3,6 +3,8 @@ import InputBox from "./components/InputBox";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 import { Button } from "@mui/material";
 import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+// npm install @mui/material @mui/icons-material 
+// for install mui
 
 function App() {
   const [amount, setAmount] = useState("");
